@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="100%" height="100%"
+    viewBox="0 0 120 120" fill="none">
+    <circle cx="60" cy="60" r="60" fill="#FFF7F0">
+    </circle>
+    <path fill-rule="evenodd" fill="rgba(254, 210, 170, 1)"
+        d="M60 120C93.1371 120 120 93.1371 120 60C120 26.8629 93.1371 0 60 0C26.8629 0 0 26.8629 0 60C0 93.1371 26.8629 120 60 120ZM60 2C92.0325 2 118 27.9675 118 60C118 92.0325 92.0325 118 60 118C27.9675 118 2 92.0325 2 60C2 27.9675 27.9675 2 60 2Z">
+    </path>
+    <path stroke="rgba(5, 150, 105, 1)" stroke-width="8" stroke-linejoin="round" stroke-linecap="round"
+        d="M41.33 60.0049L54.6632 73.3399L81.33 46.6699">
+    </path>
+</svg>

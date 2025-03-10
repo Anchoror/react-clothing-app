@@ -1,0 +1,95 @@
+.anchor-form {
+  --prefix-width: 30px;
+  --border-bottom: none;
+  --border-inner: none;
+  --border-top: none;
+  display: flex;
+  flex-direction: column;
+  min-height: 240px;
+
+  .adm-list {
+    flex: 1;
+  }
+
+  .adm-list-item:last-child {
+    margin-bottom: 0;
+  }
+  .adm-list-item {
+    padding-left: 16px;
+    border: 1px solid #e2e8f0ff;
+    border-radius: 12px;
+    margin-bottom: 36px;
+    margin-top: 12px;
+    height: 56px;
+
+    .adm-list-item-content-main {
+      padding: 15px 0;
+    }
+    .adm-input-element {
+      --font-size: 14px;
+      line-height: 24px;
+      font-weight: 700;
+      color: #0f172a;
+
+      &::placeholder {
+        color: #94a3b8;
+        font-weight: 400;
+      }
+    }
+
+    .adm-list-item-content-prefix {
+      padding: 0 !important;
+      .adm-form-item-label {
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        color: #64748b;
+      }
+    }
+
+    &:focus-within {
+      border: 1px solid var(--primary-color);
+      background-color: #f8fafc;
+
+      .adm-form-item-label {
+        color: var(--primary-color);
+      }
+    }
+  }
+
+  .no-border {
+    &.adm-list-item {
+      border-color: transparent !important;
+      display: flex;
+      // justify-content: center;
+      align-items: center;
+      padding-left: 0 !important;
+    }
+    &:focus-within {
+      border: none;
+      background-color: transparent;
+    }
+  }
+
+  .psd-hide {
+    position: relative;
+    overflow: hidden !important;
+    .adm-input-element[type="password"] {
+      font-size: 3em;
+      position: absolute;
+    }
+
+    .adm-input-element[value=""] {
+      font-size: 16px;
+    }
+  }
+
+  .code-input {
+    --cell-gap: 34px;
+    --cell-size: 56px;
+
+    .adm-passcode-input-cell {
+      font-size: 24px;
+    }
+  }
+}
