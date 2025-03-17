@@ -4,8 +4,8 @@ import MainLayout from "@/layouts/MainLayout";
 import SubLayout from "@/layouts/SubLayout";
 import Home from "@/pages/Home";
 import Login from "@/pages/Login";
-import Users from "@/pages/Users";
-import Servers from "@/pages/Servers";
+import User from "@/pages/User";
+import Bag from "@/pages/Bag";
 import Search from "@/pages/Search";
 import Welcome from "@/pages/Welcome";
 import SignIn from "@/pages/SignIn";
@@ -40,8 +40,8 @@ const App: React.FC = () => {
 
       <Route path="/" element={<MainLayout />}>
         <Route index element={<Home />} />
-        <Route path="servers" element={<Servers />} />
-        <Route path="users" element={<Users />} />
+        <Route path="bag" element={<Bag />} />
+        <Route path="user" element={<User />} />
         <Route path="clothing" element={<Clothing />} />
       </Route>
       <Route path="/" element={<SubLayout />}>

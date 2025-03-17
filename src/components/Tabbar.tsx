@@ -23,12 +23,12 @@ const tabbar = [
   {
     icon: <ReactSVG src={bagFill} className="icon" />,
     text: "Bag",
-    path: "/servers",
+    path: "/bag",
   },
   {
     icon: <TeamFill className="icon" />,
-    text: "Profile",
-    path: "/users",
+    text: "User",
+    path: "/user",
   },
 ];
 

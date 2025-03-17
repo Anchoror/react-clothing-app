@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24" height="24"
+    viewBox="0 0 24 24" fill="none">
+    <path stroke="rgba(254, 210, 170, 1)" stroke-width="1.5" stroke-linejoin="round" stroke-linecap="round"
+        d="M3 21L21 21">
+    </path>
+    <path stroke="rgba(254, 210, 170, 1)" stroke-width="1.5" stroke-linejoin="round" stroke-linecap="round"
+        d="M15.0001 8C15.0001 8.79568 15.3161 9.55872 15.8786 10.1214C16.4413 10.6839 17.2043 11 17.9999 11C18.7957 11 19.5587 10.6839 20.1212 10.1214C20.6839 9.55872 21 8.79568 21 8L21 7L3 7L4.99998 3L19 3L21 7M9.8787 10.1214C10.4412 10.6839 11.2044 11 12 11C12.7956 11 13.5588 10.6839 14.1213 10.1214C14.684 9.55872 15.0001 8.79568 15.0001 8L15.0001 7L8.99994 8C8.99994 8.79568 9.31602 9.55872 9.8787 10.1214ZM3 7L3 8C3 8.79568 3.31608 9.55872 3.87876 10.1214C4.44126 10.6839 5.20428 11 6.00006 11C6.79566 11 7.55868 10.6839 8.12136 10.1214C8.68386 9.55872 8.99994 8.79568 8.99994 8L8.99994 7L3 7Z">
+    </path>
+    <path stroke="rgba(254, 210, 170, 1)" stroke-width="1.5" stroke-linejoin="round" stroke-linecap="round"
+        d="M5 10.8501L5 21">
+    </path>
+    <path stroke="rgba(254, 210, 170, 1)" stroke-width="1.5" stroke-linejoin="round" stroke-linecap="round"
+        d="M19 10.8501L19 21">
+    </path>
+    <path stroke="rgba(254, 210, 170, 1)" stroke-width="1.5" stroke-linejoin="round" stroke-linecap="round"
+        d="M9 21L9 17C9 16.4696 9.21072 15.9608 9.58578 15.5858C9.96084 15.2107 10.4696 15 11 15L13 15C13.5304 15 14.0392 15.2107 14.4142 15.5858C14.7893 15.9608 15 16.4696 15 17L15 21">
+    </path>
+</svg>

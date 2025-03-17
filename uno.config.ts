@@ -47,6 +47,7 @@ export default defineConfig({
       "text-h3": "text-22 lh-27.5 fw-700",
       "text-content1": "text-16 color-#94A3B8 lh-24 fw-400",
       "text-content2": "text-14 color-#94A3B8 lh-20 fw-400",
+      "text-content3": "text-12 color-#94A3B8 lh-16 fw-400",
       "text-label1": "text-12 lh-16 fw-500",
     },
   ],
