@@ -7,7 +7,7 @@ interface Props {
 }
 
 const Banner: React.FC<Props> = ({ list }) => {
-  const items = list.map((item, index) => {
+  const items = list.map((_, index) => {
     return (
       <Swiper.Item key={index}>
         <div className="w-full aspect-ratio-375/200 relative">
@@ -25,8 +25,6 @@ const Banner: React.FC<Props> = ({ list }) => {
       </Swiper.Item>
     );
   });
-
-  console.log(items);
 
   return <Swiper indicator={() => null}>{items}</Swiper>;
 };

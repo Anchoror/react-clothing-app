@@ -5,7 +5,7 @@ import {
   Input,
   Divider,
   PasscodeInput,
-  NumberKeyboard,
+  // NumberKeyboard,
 } from "antd-mobile";
 import {
   MailOutline,
@@ -13,9 +13,9 @@ import {
   EyeOutline,
   EyeInvisibleOutline,
   CheckOutline,
-  CloseOutline,
+  // CloseOutline,
   UserOutline,
-  DownOutline,
+  // DownOutline,
 } from "antd-mobile-icons";
 import geogle from "../../assets/svgs/geogle.svg";
 import apple from "../../assets/svgs/apple.svg";

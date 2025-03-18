@@ -6,7 +6,7 @@ import {
   EyeOutline,
   EyeInvisibleOutline,
   CheckOutline,
-  CloseOutline,
+  // CloseOutline,
 } from "antd-mobile-icons";
 import geogle from "../../assets/svgs/geogle.svg";
 import apple from "../../assets/svgs/apple.svg";

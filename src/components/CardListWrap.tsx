@@ -12,7 +12,7 @@ const CardListWrap = ({ data }) => {
   const cardHeight = 360;
   const gap = 12;
   const [modeValue, setModeValue] = useState(1);
-  const [listTypeValue, setListTypeValue] = useState(1);
+  // const [listTypeValue, setListTypeValue] = useState(1);
   const navigate = useNavigate();
   const [cardStatus, setCardStatus] = useState(
     data.map((item) => ({
@@ -135,7 +135,7 @@ const CardListWrap = ({ data }) => {
         <Tabs
           className="min-w-300"
           style={{
-            "--adm-color-border": "transparent",
+            // "--adm-color-border": "transparent",
             "--active-title-color": "#0F172A",
             "--active-line-color": "#0F172A",
           }}>

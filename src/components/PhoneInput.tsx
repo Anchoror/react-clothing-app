@@ -78,7 +78,7 @@ const PhoneInput: FC<MobileFieldProps> = ({
       <Picker
         columns={[preMap]}
         visible={visible}
-        renderLabel={(item) => (
+        renderLabel={(item: any) => (
           <ReactSVG
             src={item?.icon}
             className="size-24 flex-center mt-8"></ReactSVG>
