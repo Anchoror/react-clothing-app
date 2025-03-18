@@ -249,7 +249,7 @@ const Home: React.FC<HomeProps> = () => {
         value={pickerValue}
         onConfirm={(v) => {
           setPickerValue(v);
-          setSort(v[0]);
+          setSort(v[0] + "");
         }}
       />
     </>

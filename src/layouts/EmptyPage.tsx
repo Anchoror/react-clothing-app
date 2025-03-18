@@ -19,7 +19,14 @@ const EmptyPage: React.FC<Props> = ({ svg, btnText, to, title, subTitle }) => {
       <div className="text-content2 text-center mt-8 flex-1">{subTitle}</div>
 
       <div className="mt-38 mx-12">
-        <Button color="primary" fill="solid" className="h-56!" block>
+        <Button
+          color="primary"
+          fill="solid"
+          className="h-56!"
+          block
+          onClick={() => {
+            console.log(to);
+          }}>
           <span className="text-16 fw-700 lh-22">{btnText}</span>
         </Button>
       </div>

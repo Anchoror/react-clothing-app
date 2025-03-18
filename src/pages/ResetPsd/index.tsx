@@ -1,13 +1,6 @@
 import React from "react";
-import { Button, Form, Tabs, Input, Divider, PasscodeInput } from "antd-mobile";
-import {
-  MailOutline,
-  LockOutline,
-  EyeOutline,
-  EyeInvisibleOutline,
-  CheckOutline,
-  UserOutline,
-} from "antd-mobile-icons";
+import { Button, Form, Tabs, Input } from "antd-mobile";
+import { MailOutline, CheckOutline } from "antd-mobile-icons";
 
 import back from "../../assets/svgs/back.svg";
 import { ReactSVG } from "react-svg";

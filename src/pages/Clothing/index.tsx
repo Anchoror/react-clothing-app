@@ -14,7 +14,7 @@ import cloth2 from "@/assets/imgs/cloth2.png";
 import cloth3 from "@/assets/imgs/cloth3.png";
 import cloth4 from "@/assets/imgs/cloth4.png";
 import cloth5 from "@/assets/imgs/cloth5.png";
-import cloth6 from "@/assets/imgs/cloth6.png";
+// import cloth6 from "@/assets/imgs/cloth6.png";
 import brand1 from "@/assets/imgs/brand1.png";
 import brand2 from "@/assets/imgs/brand2.png";
 import brand3 from "@/assets/imgs/brand3.png";

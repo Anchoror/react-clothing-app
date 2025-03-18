@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Header from "@/layouts/Header";
 import EmptyPage from "@/layouts/EmptyPage";
 import empty from "@/assets/svgs/empty.svg";
@@ -75,8 +75,12 @@ const list = [
 ];
 
 const Bag: React.FC<Props> = () => {
-  const [emptyShow, setEmptyShow] = React.useState(false);
+  const [emptyShow, setEmptyShow] = React.useState(true);
   const navigate = useNavigate();
+
+  useEffect(() => {
+    setEmptyShow(false);
+  }, []);
   const toWishlist = () => {
     navigate("/wishlist");
   };
