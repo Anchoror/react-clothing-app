@@ -60,6 +60,7 @@ export default ({ mode }: ConfigEnv): UserConfig => {
     },
 
     build: {
+      sourcemap: false,
       cssCodeSplit: false,
       chunkSizeWarningLimit: 2048,
       outDir: mode === "development" ? "dist/dev" : "dist/prod",
