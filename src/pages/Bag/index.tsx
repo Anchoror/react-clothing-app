@@ -6,7 +6,8 @@ import { HeartOutline, DeleteOutline } from "antd-mobile-icons";
 import { useNavigate } from "react-router-dom";
 import { Button } from "antd-mobile";
 import cloth2 from "@/assets/imgs/cloth2.png";
-import { Checkbox, SwipeAction, Image, Stepper } from "antd-mobile";
+import { Checkbox, SwipeAction } from "antd-mobile";
+import ClothItem from "@/components/ClothItem";
 
 interface Props {}
 
@@ -109,38 +110,7 @@ const Bag: React.FC<Props> = () => {
                   value={item.id}
                   className="anchor-checkbox px-24"
                   style={{ "--icon-size": "18px" }}>
-                  <div className="flex gap-20 w-full!">
-                    <Image
-                      width={72}
-                      height={72}
-                      src={item.img}
-                      className="bg-#F8FAFC rounded-12"></Image>
-                    <div className="flex flex-col gap-4 flex-1">
-                      <div className="text-16 fw-700 lh-22">{item.title}</div>
-                      <div className="text-12 fw-400 lh-16 color-#64748B">
-                        Size: {item.size}
-                      </div>
-                      {/* <div className="text-12 fw-400 lh-16 color-#64748B">
-                        Color: {item.color}
-                      </div> */}
-                      <div className="mt-auto flex justify-between w-full items-center">
-                        <div className="color-#0F172A text-16 fw-500 lh-22">
-                          ${item.cost}
-                        </div>
-                        <Stepper
-                          min={1}
-                          defaultValue={1}
-                          className="anchor-stepper"
-                          style={{
-                            "--input-font-size": "12px",
-                            "--input-font-color": "#0F172AFF",
-                            "--border-radius": "4px",
-                            "--input-background-color": "transparent",
-                          }}
-                        />
-                      </div>
-                    </div>
-                  </div>
+                  <ClothItem item={item} stepper></ClothItem>
                 </Checkbox>
               </SwipeAction>
             );

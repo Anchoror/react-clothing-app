@@ -2,19 +2,19 @@ import React from "react";
 import { ReactSVG } from "react-svg";
 import rootSvg from "@/assets/svgs/root.svg";
 import backSvg from "@/assets/svgs/back.svg";
-import { useNavigate, useLocation } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { useAppStore } from "@/stores";
 
 interface Props {
   back?: boolean;
   root?: boolean;
+  title?: string;
+  children?: React.ReactNode;
 }
-const SubHeader: React.FC<Props> = ({ back, root }) => {
+const SubHeader: React.FC<Props> = ({ back, root, title, children }) => {
   const navigate = useNavigate();
-  const location = useLocation();
   const { pageTitle } = useAppStore();
 
-  console.log(location);
   return (
     <header className="header-h relative lh-[var(--header-h)] flex items-center justify-between gap-12 bg-#fff color-#0F172A">
       <div className="text-h3 ml-24">
@@ -31,8 +31,8 @@ const SubHeader: React.FC<Props> = ({ back, root }) => {
             onClick={() => navigate(-1)}></ReactSVG>
         )}
       </div>
-      <div className="absolute x-center">{pageTitle}</div>
-      <div className="mr-24 flex gap-16 py-18 header-h"></div>
+      <div className="absolute x-center">{title || pageTitle}</div>
+      <div className="mr-24 flex gap-16 py-18 header-h">{children}</div>
     </header>
   );
 };

@@ -3,7 +3,6 @@ import { Swiper, Button } from "antd-mobile";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import PageBg from "@/components/PageBg";
-import { useAppStore } from "@/stores";
 
 interface Props {}
 
@@ -23,7 +22,6 @@ const welcomeTexts = [
 const Dashboard: React.FC<Props> = () => {
   const [index, setIndex] = useState(0);
   const navigate = useNavigate();
-  const { appName } = useAppStore();
 
   const toSign = () => {
     navigate("/sign-in");
@@ -33,10 +31,6 @@ const Dashboard: React.FC<Props> = () => {
 
   return (
     <div className="size-screen flex-center relative">
-      {/* <div className="bg-var(--primary-800) color-corcal size-screen flex-center absolute z-100">
-        <h1 className="text-h1">{name}</h1>
-      </div> */}
-      {/* <PageBg type={1}></PageBg> */}
       <PageBg index={index}></PageBg>
       <div className="absolute z-100 left-18 right-18 bottom-34 bg-#fff rounded-24">
         <Swiper
