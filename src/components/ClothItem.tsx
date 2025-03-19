@@ -8,7 +8,7 @@ interface Props {
 
 const ClothItem: React.FC<Props> = ({ item, stepper }) => {
   return (
-    <div className="flex gap-20 w-full!">
+    <div className=" flex gap-20 w-full!">
       <Image
         width={72}
         height={72}

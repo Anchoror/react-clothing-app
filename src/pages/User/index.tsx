@@ -20,6 +20,7 @@ import {
 } from "antd-mobile-icons";
 import { useNavigate } from "react-router-dom";
 import { useAppStore } from "@/stores";
+import Title from "@/layouts/Title";
 
 interface Props {}
 
@@ -28,7 +29,7 @@ const general = [
     id: 1,
     title: "My account",
     prefix: <UserOutline />,
-    to: "",
+    to: "/account",
   },
   {
     id: 2,
@@ -149,13 +150,8 @@ const User: React.FC<Props> = ({}) => {
           <div className="text-label1">Following</div>
         </div>
       </div>
-
+      <Title value="General Setting"></Title>
       <List
-        header={
-          <div className="text-16 fw-700 lh-22 color-#0F172A mb-16">
-            General Setting
-          </div>
-        }
         className="mx-24 mb-24"
         style={{
           "--border-bottom": "none",
@@ -169,18 +165,15 @@ const User: React.FC<Props> = ({}) => {
               arrowIcon={<RightOutline fontSize={12} color="#64748B" />}
               prefix={<div className="text-20 flex-center">{item.prefix}</div>}
               onClick={() => {
-                console.log(item.to);
+                if (item.to) navigate(item.to);
               }}>
               <span className="text-14 fw-500 lh-20">{item.title}</span>
             </List.Item>
           );
         })}
       </List>
-
+      <Title value="Other"></Title>
       <List
-        header={
-          <div className="text-16 fw-700 lh-22 color-#0F172A mb-16">Other</div>
-        }
         className="mx-24"
         style={{
           "--border-bottom": "none",

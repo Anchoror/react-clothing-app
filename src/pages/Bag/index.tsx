@@ -151,7 +151,9 @@ const Bag: React.FC<Props> = () => {
               block
               fill="solid"
               className="h-56!"
-              onClick={() => {}}>
+              onClick={() => {
+                navigate("/CheckOut/1");
+              }}>
               Checkout
             </Button>
           </div>

@@ -1,15 +1,27 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Image, Button } from "antd-mobile";
 import brand1 from "@/assets/imgs/brand1.png";
+import { useNavigate } from "react-router-dom";
+import { useAppStore } from "@/stores";
 
 interface Props {}
 
 const Following: React.FC<Props> = () => {
+  const navigate = useNavigate();
+  const { setPageTitle } = useAppStore();
+
+  useEffect(() => {
+    setPageTitle("Following");
+  }, [setPageTitle]);
+
   return (
     <div className="px-24">
       {new Array(10).fill(1).map((_, index) => {
         return (
-          <div className="flex gap-12 items-center mb-12 py-8" key={index}>
+          <div
+            className="flex gap-12 items-center mb-12 py-8"
+            key={index}
+            onClick={() => navigate(`/shop/${index}`)}>
             <Image
               src={brand1}
               width={48}

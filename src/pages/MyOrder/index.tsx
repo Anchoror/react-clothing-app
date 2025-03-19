@@ -6,6 +6,7 @@ import cloth2 from "@/assets/imgs/cloth2.png";
 import { ReactSVG } from "react-svg";
 import ClothItem from "@/components/ClothItem";
 import checked from "@/assets/svgs/checked.svg";
+import Title from "@/layouts/Title";
 
 interface Props {}
 
@@ -87,23 +88,30 @@ const MyOrder: React.FC<Props> = () => {
         <CapsuleTabs.Tab title="Complained" key="5" />
       </CapsuleTabs>
 
-      <div className="px-24 mt-24">
+      <div className="mt-24">
         {list.map((item) => {
           return (
             <div className="mb-24" key={item.id}>
-              <div className="flex justify-between mb-22">
-                <div className="text-16 fw-700 lh-22 flex items-center gap-4">
-                  <ReactSVG
-                    src={checked}
-                    className="anchor-svg inline-block"></ReactSVG>
-                  <span>ZARA</span>
-                </div>
-                <div className="color-#FFC947 text-14 fw-500 lh-20">
-                  In Progress
-                </div>
-              </div>
+              <Title
+                value={
+                  <>
+                    <div className="text-16 fw-700 lh-22 flex items-center gap-4">
+                      <ReactSVG
+                        src={checked}
+                        className="anchor-svg inline-block"></ReactSVG>
+                      <span>ZARA</span>
+                    </div>
+                  </>
+                }
+                extra={
+                  <div className="color-#FFC947 text-14 fw-500 lh-20">
+                    In Progress
+                  </div>
+                }></Title>
 
-              <ClothItem item={item}></ClothItem>
+              <div className="px-24">
+                <ClothItem item={item}></ClothItem>
+              </div>
             </div>
           );
         })}

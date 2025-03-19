@@ -16,7 +16,7 @@ const SubHeader: React.FC<Props> = ({ back, root, title, children }) => {
   const { pageTitle } = useAppStore();
 
   return (
-    <header className="header-h relative lh-[var(--header-h)] flex items-center justify-between gap-12 bg-#fff color-#0F172A">
+    <header className="header-h sticky top-0 lh-[var(--header-h)] flex items-center justify-between gap-12 bg-#fff color-#0F172A">
       <div className="text-h3 ml-24">
         {root && (
           <ReactSVG

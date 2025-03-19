@@ -21,6 +21,11 @@ import Clothing from "@/pages/Clothing";
 import Detail from "@/pages/Detail";
 import MyOrder from "@/pages/MyOrder";
 import Following from "@/pages/Following";
+import Shop from "@/pages/Shop";
+import MyAccount from "@/pages/MyAccount";
+import Wishlist from "@/pages/Wishlist";
+import CheckOut from "@/pages/CheckOut";
+import Payment from "@/pages/Payment";
 
 export interface RouteConfig {
   path: string;
@@ -63,6 +68,11 @@ export const routes: RouteConfig[] = [
       { path: "camera", element: <Camera /> },
       { path: "detail", element: <Detail /> },
       { path: "following", element: <Following /> },
+      { path: "shop/:id", element: <Shop /> },
+      { path: "account", element: <MyAccount /> },
+      { path: "wishlist", element: <Wishlist /> },
+      { path: "checkout/:id", element: <CheckOut /> },
+      { path: "payment", element: <Payment /> },
     ],
   },
 ];

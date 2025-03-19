@@ -1,19 +1,18 @@
 // filepath: /src/components/layouts/MainLayout.tsx
-import React, { useEffect, useState, useRef } from "react";
+import React, { useEffect, useRef } from "react";
 import { Outlet } from "react-router-dom";
 import Footer from "./Footer";
 import { useAppStore } from "@/stores";
 import { CSSTransition, TransitionGroup } from "react-transition-group";
 const MainLayout = () => {
-  const { appName } = useAppStore();
-  const [pageLoading, setPageLoading] = useState(true);
+  const { appName, pageLoading, setPageLoading } = useAppStore();
   const loadingNodeRef = useRef(null);
 
   useEffect(() => {
     setTimeout(() => {
       setPageLoading(false);
     }, 2000);
-  }, []);
+  }, [setPageLoading]);
   return (
     <div className="h-screen w-screen bg-#fff text-gray-800 font-sans text-16 m-auto overflow-x-hidden font-sans">
       <TransitionGroup>

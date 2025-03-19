@@ -3,7 +3,7 @@ import ClothCard from "./ClothCard";
 
 interface Props {
   list: any[];
-  staggered: boolean;
+  staggered?: boolean;
 }
 
 const ClothList: React.FC<Props> = ({ list, staggered }) => {
