@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import Title from "@/layouts/Title";
 import { RightOutline } from "antd-mobile-icons";
@@ -7,6 +7,7 @@ import { Button, Divider } from "antd-mobile";
 import { ReactSVG } from "react-svg";
 import checked from "@/assets/svgs/checked.svg";
 import cloth2 from "@/assets/imgs/cloth2.png";
+import { useAppStore } from "@/stores";
 
 interface Props {}
 
@@ -24,6 +25,12 @@ const data = {
 const CheckOut: React.FC<Props> = () => {
   const { id } = useParams();
   const navigate = useNavigate();
+  const { setPageTitle } = useAppStore();
+
+  useEffect(() => {
+    setPageTitle("Checkout");
+  }, [setPageTitle]);
+
   return (
     <div className="pb-10">
       <Title

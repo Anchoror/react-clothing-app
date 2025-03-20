@@ -26,6 +26,7 @@ import MyAccount from "@/pages/MyAccount";
 import Wishlist from "@/pages/Wishlist";
 import CheckOut from "@/pages/CheckOut";
 import Payment from "@/pages/Payment";
+import PaySuccess from "@/pages/PaySuccess";
 
 export interface RouteConfig {
   path: string;
@@ -73,6 +74,7 @@ export const routes: RouteConfig[] = [
       { path: "wishlist", element: <Wishlist /> },
       { path: "checkout/:id", element: <CheckOut /> },
       { path: "payment", element: <Payment /> },
+      { path: "paySuccess", element: <PaySuccess /> },
     ],
   },
 ];

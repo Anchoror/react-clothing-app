@@ -1,20 +1,30 @@
 // filepath: /src/components/layouts/MainLayout.tsx
 import React, { useEffect, useRef } from "react";
-import { Outlet } from "react-router-dom";
+import { Outlet, useLocation } from "react-router-dom";
 import Footer from "./Footer";
 import { useAppStore } from "@/stores";
 import { CSSTransition, TransitionGroup } from "react-transition-group";
 const MainLayout = () => {
   const { appName, pageLoading, setPageLoading } = useAppStore();
   const loadingNodeRef = useRef(null);
+  const { pathname } = useLocation();
 
   useEffect(() => {
-    setTimeout(() => {
-      setPageLoading(false);
-    }, 2000);
-  }, [setPageLoading]);
+    if (pageLoading) {
+      setTimeout(() => {
+        setPageLoading(false);
+      }, 2000);
+    }
+    document.getElementById("app").scrollTo({
+      top: 0,
+      left: 0,
+      behavior: "smooth",
+    });
+  }, [setPageLoading, pathname]);
   return (
-    <div className="h-screen w-screen bg-#fff text-gray-800 font-sans text-16 m-auto overflow-x-hidden font-sans">
+    <div
+      id="app"
+      className="h-screen w-screen bg-#fff text-gray-800 font-sans text-16 m-auto overflow-x-hidden font-sans">
       <TransitionGroup>
         {pageLoading && (
           <CSSTransition

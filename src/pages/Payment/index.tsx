@@ -122,7 +122,7 @@ const Payment: React.FC<Props> = () => {
           color="primary"
           block
           onClick={() => {
-            navigate("/payment");
+            navigate("/paySuccess");
           }}>
           Continue Payment
         </Button>

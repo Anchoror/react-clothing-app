@@ -1,7 +1,8 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { FloatingPanel, Image, Button, Swiper, ProgressBar } from "antd-mobile";
 import cloth3 from "@/assets/imgs/cloth3.png";
 import brand1 from "@/assets/imgs/brand1.png";
+import { useAppStore } from "@/stores";
 
 interface Props {}
 
@@ -27,6 +28,11 @@ const imgs = [
 const Detail: React.FC<Props> = () => {
   const anchors = [100, 360, window.innerHeight * 0.8];
   const [sizeValue, setSizeValue] = React.useState("XS");
+  const { setPageTitle } = useAppStore();
+
+  useEffect(() => {
+    setPageTitle("Detail");
+  }, []);
 
   const images = imgs.map((item) => {
     return (

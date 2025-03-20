@@ -12,13 +12,13 @@ interface Props {
 const EmptyPage: React.FC<Props> = ({ svg, btnText, to, title, subTitle }) => {
   return (
     <div className="px-45 py-16 text-center">
-      <ReactSVG src={svg} className="w-134 mt-112 mx-auto"></ReactSVG>
+      <ReactSVG src={svg} className="min-w-134 mt-112 mx-auto"></ReactSVG>
 
       <div className="text-h2">{title}</div>
 
       <div className="text-content2 text-center mt-8 flex-1">{subTitle}</div>
 
-      <div className="mt-38 mx-12">
+      <div className="fixed bottom-24 left-0 right-0 px-24">
         <Button
           color="primary"
           fill="solid"
