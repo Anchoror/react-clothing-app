@@ -1,0 +1,64 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="100%" height="100%"
+    viewBox="0 0 132.84521484375 172.8599853515625" fill="none">
+    <path
+        d="M84.5929 118.46C84.5929 128.213 76.6862 136.12 66.933 136.12C57.1797 136.12 49.2729 128.213 49.2729 118.46C49.2729 108.707 57.1797 100.8 66.933 100.8C76.6862 100.8 84.5929 108.707 84.5929 118.46Z"
+        fill="url(#linear_fill_8D2mppVAwL)">
+    </path>
+    <path fill="#FFFFFF"
+        d="M66.6731 0C59.9021 0 54.4131 5.48905 54.4131 12.26C54.4131 19.031 59.9021 24.52 66.6731 24.52C73.444 24.52 78.9331 19.031 78.9331 12.26C78.9331 5.48905 73.444 0 66.6731 0Z">
+    </path>
+    <path fill-rule="evenodd" fill="rgba(254, 210, 170, 1)"
+        d="M54.4131 12.26C54.4131 5.48905 59.9021 0 66.6731 0C73.444 0 78.9331 5.48905 78.9331 12.26C78.9331 19.031 73.444 24.52 66.6731 24.52C59.9021 24.52 54.4131 19.031 54.4131 12.26ZM55.9131 12.26C55.9131 6.31742 60.7305 1.5 66.6731 1.5C72.6157 1.5 77.4331 6.31742 77.4331 12.26C77.4331 18.2026 72.6157 23.02 66.6731 23.02C60.7305 23.02 55.9131 18.2026 55.9131 12.26Z">
+    </path>
+    <path
+        d="M23.9143 55.0626L23.9143 93.9576L10.7411 115.817C10.3947 116.382 10.2056 117.03 10.1942 117.692C10.1818 118.356 10.3471 119.009 10.6721 119.587C10.9982 120.164 11.4715 120.645 12.0444 120.977C12.6185 121.309 13.2696 121.483 13.9331 121.48L119.679 121.48C120.34 121.48 120.99 121.305 121.563 120.972C122.135 120.639 122.608 120.16 122.935 119.585C123.262 119.009 123.43 118.358 123.423 117.695C123.415 117.034 123.233 116.386 122.893 115.817L109.696 93.9576L109.696 55.0626C109.7 49.4293 108.592 43.8507 106.439 38.646C104.286 33.4413 101.128 28.711 97.1458 24.7274C93.1635 20.7427 88.4362 17.5822 83.2321 15.4265C78.0281 13.2696 72.4504 12.16 66.8172 12.16C55.4387 12.16 44.5267 16.6804 36.4806 24.7263C28.4345 32.7712 23.9143 43.6846 23.9143 55.0626Z"
+        fill="url(#linear_fill_0fDsEXi64e)">
+    </path>
+    <rect x="53.373046875" y="49.70001220703125" width="6.21" height="13.45" rx="3.105" fill="#0F172A">
+    </rect>
+    <rect x="74.072998046875" y="49.70001220703125" width="6.21" height="13.45" rx="3.105" fill="#0F172A">
+    </rect>
+    <path stroke="rgba(15, 23, 42, 1)" stroke-width="3" stroke-linecap="round"
+        d="M75.103 80.7505C66.639 72.7227 58.543 82.82 58.543 82.82">
+    </path>
+    <path stroke="rgba(51, 65, 85, 1)" stroke-width="2.0433895587921143" stroke-linecap="round"
+        d="M19.3293 18.588L10.377 12.432">
+    </path>
+    <path stroke="rgba(51, 65, 85, 1)" stroke-width="2.0433897972106934" stroke-linecap="round"
+        d="M26.107 12.8824L21.8154 2.90131">
+    </path>
+    <path stroke="rgba(51, 65, 85, 1)" stroke-width="2.0433895587921143" stroke-linecap="round"
+        d="M5.95898 26.2578L16.6982 27.9038">
+    </path>
+    <path stroke="rgba(51, 65, 85, 1)" stroke-width="2.0433895587921143" stroke-linecap="round"
+        d="M113.565 18.6539L122.342 12.2504">
+    </path>
+    <path stroke="rgba(51, 65, 85, 1)" stroke-width="2.0433897972106934" stroke-linecap="round"
+        d="M106.63 13.1399L110.642 3.04283">
+    </path>
+    <path stroke="rgba(51, 65, 85, 1)" stroke-width="2.0433895587921143" stroke-linecap="round"
+        d="M127.144 25.9475L116.455 27.8927">
+    </path>
+    <g filter="url(#filter_J49824Fujd)">
+        <ellipse cx="66.34283203125" cy="153.1049755859375" rx="40.44" ry="4.755" fill="#94A3B8" fill-opacity="0.2">
+        </ellipse>
+    </g>
+    <defs>
+        <linearGradient id="linear_fill_8D2mppVAwL" x1="66.822509765625" y1="141.81500244140625" x2="66.822509765625"
+            y2="93.175048828125" gradientUnits="userSpaceOnUse">
+            <stop offset="0" stop-color="#FED2A9" />
+            <stop offset="1" stop-color="#FFF2E6" />
+        </linearGradient>
+        <linearGradient id="linear_fill_0fDsEXi64e" x1="47.31884765625" y1="160.3441162109375" x2="91.085205078125"
+            y2="-19.47802734375" gradientUnits="userSpaceOnUse">
+            <stop offset="0" stop-color="#FED2A9" />
+            <stop offset="1" stop-color="#FFF4EB" />
+        </linearGradient>
+        <filter id="filter_J49824Fujd" x="10.90283203125" y="133.3499755859375" width="110.8798828125"
+            height="39.510009765625" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+            <feFlood flood-opacity="0" result="feFloodId_J49824Fujd" />
+            <feBlend mode="normal" in="SourceGraphic" in2="feFloodId_J49824Fujd" result="shape" />
+            <feGaussianBlur result="gaussian_blur_J49824Fujd" stdDeviation="7.5" />
+        </filter>
+    </defs>
+</svg>
