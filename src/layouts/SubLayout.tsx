@@ -4,7 +4,6 @@ import { Outlet } from "react-router-dom";
 import SubHeader from "./SubHeader";
 import { useLocation } from "react-router-dom";
 import { useAppStore } from "@/stores";
-
 const SubLayout = () => {
   const { pageTitle, setPageTitle } = useAppStore();
   const { pathname } = useLocation();

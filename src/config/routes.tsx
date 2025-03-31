@@ -1,3 +1,4 @@
+import { Outlet } from "react-router-dom";
 import MainLayout from "@/layouts/MainLayout";
 import SubLayout from "@/layouts/SubLayout";
 import Home from "@/pages/Home";
@@ -38,19 +39,6 @@ export interface RouteConfig {
 }
 
 export const routes: RouteConfig[] = [
-  { path: "/login", element: <Login /> },
-  { path: "/sign-in", element: <SignIn /> },
-  { path: "/sign-up", element: <SignUp /> },
-  { path: "/welcome", element: <Welcome /> },
-  { path: "/turn-on", element: <TurnOn /> },
-  { path: "/reset-psd", element: <ResetPsd /> },
-  { path: "/email-send", element: <EmailSend /> },
-  { path: "/auth-code", element: <AuthCode /> },
-  { path: "/change-psd", element: <ChangePsd /> },
-  { path: "/success", element: <Success /> },
-  { path: "/searching", element: <Searching /> },
-  { path: "/search", element: <Search /> },
-  { path: "myOrder", element: <MyOrder /> },
   {
     path: "/",
     element: <MainLayout />,
@@ -75,6 +63,29 @@ export const routes: RouteConfig[] = [
       { path: "checkout/:id", element: <CheckOut /> },
       { path: "payment", element: <Payment /> },
       { path: "paySuccess", element: <PaySuccess /> },
+    ],
+  },
+  {
+    path: "/",
+    element: (
+      <div id="app">
+        <Outlet></Outlet>
+      </div>
+    ),
+    children: [
+      { path: "login", element: <Login /> },
+      { path: "sign-in", element: <SignIn /> },
+      { path: "sign-up", element: <SignUp /> },
+      { path: "welcome", element: <Welcome /> },
+      { path: "turn-on", element: <TurnOn /> },
+      { path: "reset-psd", element: <ResetPsd /> },
+      { path: "email-send", element: <EmailSend /> },
+      { path: "auth-code", element: <AuthCode /> },
+      { path: "change-psd", element: <ChangePsd /> },
+      { path: "success", element: <Success /> },
+      { path: "searching", element: <Searching /> },
+      { path: "search", element: <Search /> },
+      { path: "myOrder", element: <MyOrder /> },
     ],
   },
 ];

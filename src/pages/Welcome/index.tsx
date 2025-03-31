@@ -2,6 +2,7 @@ import React from "react";
 import { Swiper, Button } from "antd-mobile";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { useAppStore } from "@/stores";
 import PageBg from "@/components/PageBg";
 
 interface Props {}
@@ -22,9 +23,17 @@ const welcomeTexts = [
 const Dashboard: React.FC<Props> = () => {
   const [index, setIndex] = useState(0);
   const navigate = useNavigate();
-
+  const { token } = useAppStore();
   const toSign = () => {
     navigate("/sign-in");
+  };
+
+  const toIndex = () => {
+    if (token) {
+      navigate("/");
+    } else {
+      toSign();
+    }
   };
 
   // const toLogin;
@@ -66,7 +75,11 @@ const Dashboard: React.FC<Props> = () => {
             onClick={toSign}>
             <span className="text-14 fw-700 lh-20">Sign In</span>
           </Button>
-          <Button color="primary" fill="solid" className="flex-1 h-56!">
+          <Button
+            color="primary"
+            fill="solid"
+            className="flex-1 h-56!"
+            onClick={toIndex}>
             <span className="text-14 fw-700 lh-20">Get Started</span>
           </Button>
         </div>

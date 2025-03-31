@@ -4,13 +4,23 @@ import star from "@/assets/svgs/star.svg";
 import curve from "@/assets/svgs/curve.svg";
 import longCurve from "@/assets/svgs/longCurve.svg";
 import { ReactSVG } from "react-svg";
+import { useRef, useEffect } from "react";
 import { CSSTransition, TransitionGroup } from "react-transition-group";
+import { useAppStore } from "@/stores";
 
 interface Props {
   index: number;
 }
 
 const PageBg: React.FC<Props> = ({ index = 0 }) => {
+  const img0Ref = useRef<HTMLImageElement>(null);
+  const img1Ref = useRef<HTMLImageElement>(null);
+
+  useEffect(() => {
+    console.log(img0Ref.current);
+    console.log(img1Ref.current);
+  }, []);
+
   return (
     <div className="size-full relative overflow-hidden bg-liner">
       <TransitionGroup>
@@ -20,6 +30,7 @@ const PageBg: React.FC<Props> = ({ index = 0 }) => {
               <img
                 className="block absolute top--72 left--165 w-713 h-1061"
                 src={woman1}
+                ref={img0Ref}
                 alt=""
               />
               <ReactSVG
@@ -48,6 +59,7 @@ const PageBg: React.FC<Props> = ({ index = 0 }) => {
               <img
                 className="block absolute top-58 left--146 w-557 h-780"
                 src={woman2}
+                ref={img1Ref}
                 alt=""
               />
               <ReactSVG

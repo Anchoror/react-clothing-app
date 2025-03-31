@@ -12,6 +12,7 @@ import geogle from "../../assets/svgs/geogle.svg";
 import apple from "../../assets/svgs/apple.svg";
 import { ReactSVG } from "react-svg";
 import { useNavigate } from "react-router-dom";
+import { useAppStore } from "@/stores";
 
 import "./index.less";
 
@@ -22,12 +23,18 @@ const SignIn: React.FC<Props> = () => {
   const [showPsd, setShowPsd] = React.useState(false);
   const [emailValid, setEmailValid] = React.useState(false);
   const navigate = useNavigate();
+  const { setToken } = useAppStore();
 
   const checkedEmail = (_rule, value) => {
     const exp = /^[a-zA-Z0-9_-]+@[a-zA-Z0-9_-]+(\.[a-zA-Z0-9_-]+)+$/;
 
     setEmailValid(exp.test(value));
     return Promise.reject(new Error(""));
+  };
+
+  const onSubmit = () => {
+    setToken("test_token");
+    navigate("/");
   };
 
   return (
@@ -43,13 +50,14 @@ const SignIn: React.FC<Props> = () => {
         className="anchor-form"
         requiredMarkStyle="none"
         hasFeedback={false}
+        initialValues={{ email: "donquixote1110@outlook.com", psd: "123456" }}
         footer={
           <Button
             color="primary"
             block
             fill="solid"
             className="flex-1 h-56!"
-            onClick={() => console.log(form.getFieldsValue())}>
+            onClick={onSubmit}>
             <span className="text-16 fw-700 lh-22">Sign In</span>
           </Button>
         }>
