@@ -13,20 +13,22 @@ const renderRoutes = (routes: RouteConfig[]) =>
   ));
 
 const App: React.FC = () => {
-  const { appName, pageLoading, closePageLoading } = useAppStore();
+  const { appName, pageLoading, setPageLoading } = useAppStore();
   const loadingNodeRef = useRef(null);
   const { pathname } = useLocation();
 
   useEffect(() => {
     if (pageLoading) {
-      closePageLoading();
+      setTimeout(() => {
+        setPageLoading(false);
+      }, 1500);
     }
     document.getElementById("app").scrollTo({
       top: 0,
       left: 0,
       behavior: "smooth",
     });
-  }, [closePageLoading, pathname]);
+  }, [setPageLoading, pathname]);
   return (
     <>
       <TransitionGroup>
