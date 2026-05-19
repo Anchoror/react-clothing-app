@@ -15,14 +15,21 @@ import cloth3 from "@/assets/imgs/cloth3.png";
 import cloth4 from "@/assets/imgs/cloth4.png";
 import cloth5 from "@/assets/imgs/cloth5.png";
 // import cloth6 from "@/assets/imgs/cloth6.png";
-import brand1 from "@/assets/imgs/brand1.png";
-import brand2 from "@/assets/imgs/brand2.png";
-import brand3 from "@/assets/imgs/brand3.png";
-import brand4 from "@/assets/imgs/brand4.png";
-import brand5 from "@/assets/imgs/brand5.png";
-import brand6 from "@/assets/imgs/brand6.png";
-import brand7 from "@/assets/imgs/brand7.png";
-import brand8 from "@/assets/imgs/brand8.png";
+import category1 from "@/assets/imgs/category/category1.png";
+import category2 from "@/assets/imgs/category/category2.png";
+import category3 from "@/assets/imgs/category/category3.png";
+import category4 from "@/assets/imgs/category/category4.png";
+import category5 from "@/assets/imgs/category/category5.png";
+import category6 from "@/assets/imgs/category/category6.png";
+import category7 from "@/assets/imgs/category/category7.png";
+import category8 from "@/assets/imgs/category/category8.png";
+import category9 from "@/assets/imgs/category/category9.png";
+import category10 from "@/assets/imgs/category/category10.png";
+import category11 from "@/assets/imgs/category/category11.png";
+import category12 from "@/assets/imgs/category/category12.png";
+import category13 from "@/assets/imgs/category/category13.png";
+import category14 from "@/assets/imgs/category/category14.png";
+
 import bag from "@/assets/svgs/bag.svg";
 
 interface Props {}
@@ -37,43 +44,76 @@ const Clothing: React.FC<Props> = () => {
   const list = [
     {
       id: 1,
-      name: "Zara",
-      img: brand1,
+      name: "Sweater",
+      img: category1,
+      isNew: true,
     },
     {
       id: 2,
-      name: "Nike",
-      img: brand2,
+      name: "Blouse",
+      img: category2,
+      isNew: true,
     },
     {
       id: 3,
-      name: "H&M",
-      img: brand3,
+      name: "Teddy Coat",
+      img: category3,
+      isNew: true,
     },
     {
       id: 4,
-      name: "Gucci",
-      img: brand4,
+      name: "Blazer",
+      img: category4,
     },
     {
       id: 5,
-      name: "Dior",
-      img: brand5,
+      name: "Puffer Jacket",
+      img: category5,
     },
     {
       id: 6,
-      name: "Asos",
-      img: brand6,
+      name: "Overcoat",
+      img: category6,
     },
     {
       id: 7,
-      name: "Ellesse",
-      img: brand7,
+      name: "Casual Pants",
+      img: category7,
     },
     {
       id: 8,
-      name: "Weekday",
-      img: brand8,
+      name: "Culottes",
+      img: category8,
+    },
+    {
+      id: 9,
+      name: "Mini Skirt",
+      img: category9,
+    },
+    {
+      id: 10,
+      name: "Slip Dress",
+      img: category10,
+    },
+    {
+      id: 11,
+      name: "Midi Skirt",
+      img: category11,
+    },
+    {
+      id: 12,
+      name: "Accessories",
+      img: category12,
+    },
+    {
+      id: 13,
+      name: "Shoes",
+      img: category13,
+    },
+    {
+      id: 14,
+      name: "Bag",
+      img: category14,
     },
   ];
 
@@ -135,13 +175,13 @@ const Clothing: React.FC<Props> = () => {
       </Header>
 
       <Title
-        value="Trending brands"
-        extra={
-          <div className="text-14 fw-500 lh-20 color-primary">view more</div>
-        }
+        value="All Category"
+        // extra={
+        //   <div className="text-14 fw-500 lh-20 color-primary">view more</div>
+        // }
       />
 
-      <CategorySwiper type={2} list={list} />
+      <CategorySwiper type={2} list={list} showActived />
 
       <CardListWrap data={clothList}></CardListWrap>
     </div>

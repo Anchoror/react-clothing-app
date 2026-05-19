@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Image, Button } from "antd-mobile";
 import { HeartOutline, HeartFill } from "antd-mobile-icons";
+import { useNavigate } from "react-router-dom";
 
 interface Props {
   data: any;
@@ -9,9 +10,22 @@ interface Props {
 
 const ClothCard: React.FC<Props> = ({ data, type }) => {
   const [isLoved, setIsLoved] = useState(data.isLoved);
+  const onLoved = (e) => {
+    e.stopPropagation();
+    setIsLoved(!isLoved);
+  };
+
+  const navigate = useNavigate();
+
+  const onClick = () => {
+    console.log(data);
+    navigate("/detail");
+  };
 
   return (
-    <div className="rounded-t-12 overflow-hidden pb-2 w-full relative">
+    <div
+      className="rounded-t-12 overflow-hidden pb-2 w-full relative"
+      onClick={onClick}>
       <Image
         src={data.img}
         fit="cover"
@@ -32,7 +46,7 @@ const ClothCard: React.FC<Props> = ({ data, type }) => {
         className="absolute! top-12 right-12 bg-#fff! p-0! rounded-50% size-24!"
         fill="none"
         size="mini"
-        onClick={() => setIsLoved(!isLoved)}>
+        onClick={onLoved}>
         {isLoved ? (
           <HeartFill className="block mx-auto size-12 color-#EB6383" />
         ) : (

@@ -1,46 +1,45 @@
 import React, { useState, useEffect } from "react";
 
 interface Props {
-  value: string;
+  value: string | number;
 }
 
 const CountDown: React.FC<Props> = ({ value }) => {
-  const [hours, setHours] = useState(0);
-  const [minutes, setMinutes] = useState(0);
-  const [second, setSecond] = useState(0);
+  const [total, setTotal] = useState(0);
 
   useEffect(() => {
-    const [h, m, s] = value.split(":");
-    setHours(parseInt(h));
-    setMinutes(parseInt(m));
-    setSecond(parseInt(s));
+    setTotal(+value);
   }, [value]);
 
-  const interval = setInterval(() => {
-    if (second > 0) {
-      setSecond(second - 1);
-    } else {
-      if (minutes > 0) {
-        setMinutes(minutes - 1);
-        setSecond(59);
-      } else {
-        if (hours > 0) {
-          setHours(hours - 1);
-          setMinutes(59);
-          setSecond(59);
-          clearInterval(interval);
+  useEffect(() => {
+    const count = setInterval(() => {
+      setTotal((prev) => {
+        if (prev <= 1) {
+          clearInterval(count);
+          return 0;
         }
-      }
-    }
-  }, 1000);
+        return prev - 1;
+      });
+    }, 1000);
+
+    return () => clearInterval(count);
+  });
+
+  const hours = Math.floor(total / 3600)
+    .toString()
+    .padStart(2, "0");
+  const minutes = Math.floor((total % 3600) / 60)
+    .toString()
+    .padStart(2, "0");
+  const seconds = (total % 60).toString().padStart(2, "0");
 
   return (
     <div className="flex gap-4 text-12 fw-700 lh-24 text-center">
-      {/* <div className="w-28 h-24 rounded-6 bg-#EB6383 color-#fff">{hours}</div>
-      <div className="text-14">:</div> */}
+      <div className="w-28 h-24 rounded-6 bg-#EB6383 color-#fff">{hours}</div>
+      <div className="text-14">:</div>
       <div className="w-28 h-24 rounded-6 bg-#EB6383 color-#fff">{minutes}</div>
       <div className="text-14">:</div>
-      <div className="w-28 h-24 rounded-6 bg-#EB6383 color-#fff">{second}</div>
+      <div className="w-28 h-24 rounded-6 bg-#EB6383 color-#fff">{seconds}</div>
     </div>
   );
 };

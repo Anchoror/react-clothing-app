@@ -11,14 +11,14 @@ const CardListWrap = ({ data }) => {
   const containerRef = useRef(null);
   const cardHeight = 360;
   const gap = 12;
-  const [modeValue, setModeValue] = useState(1);
+  const [modeValue, setModeValue] = useState(2);
   // const [listTypeValue, setListTypeValue] = useState(1);
   const navigate = useNavigate();
   const [cardStatus, setCardStatus] = useState(
     data.map((item) => ({
       index: 0,
       id: item.examples[0].id,
-    }))
+    })),
   );
 
   const [cardSize, setCardSize] = useState({
@@ -129,8 +129,8 @@ const CardListWrap = ({ data }) => {
   });
 
   return (
-    <div className="mt-22">
-      <div className="flex justify-between items-center p-12 bg-#fff">
+    <div className="">
+      <div className="flex justify-between items-center p-12 pb-0 bg-#fff">
         {/* <div className="text-20">title</div> */}
         <Tabs
           className="min-w-300"
@@ -173,10 +173,11 @@ const CardListWrap = ({ data }) => {
       </div>
 
       <CapsuleTabs className="anchor-capsuletabs">
-        <CapsuleTabs.Tab title="⭐️ Best sellers" key="1" />
-        <CapsuleTabs.Tab title="👚 Tops" key="2" />
-        <CapsuleTabs.Tab title="🧥 Blazers" key="3" />
-        <CapsuleTabs.Tab title="👗 Dressess" key="4" />
+        <CapsuleTabs.Tab title="🔥 Best sellers" key="1" />
+        <CapsuleTabs.Tab title="⭐️ Newest" key="2" />
+        <CapsuleTabs.Tab title="💁🏼‍♀️ Recommended" key="3" />
+        <CapsuleTabs.Tab title="⬇️ High to Low" key="4" />
+        <CapsuleTabs.Tab title="⬆️ Low to High" key="5" />
       </CapsuleTabs>
       <div style={cardContainerStyle} ref={containerRef}>
         {cards}

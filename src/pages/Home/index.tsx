@@ -12,10 +12,10 @@ import cloth3 from "@/assets/imgs/cloth3.png";
 import cloth4 from "@/assets/imgs/cloth4.png";
 import cloth5 from "@/assets/imgs/cloth5.png";
 import cloth6 from "@/assets/imgs/cloth6.png";
-import category1 from "@/assets/imgs/category1.png";
-import category2 from "@/assets/imgs/category2.png";
-import category3 from "@/assets/imgs/category3.png";
-import category4 from "@/assets/imgs/category4.png";
+import category1 from "@/assets/imgs/category/category1.png";
+import category2 from "@/assets/imgs/category/category13.png";
+import category3 from "@/assets/imgs/category/category12.png";
+import category4 from "@/assets/imgs/category/category14.png";
 
 import Banner from "@/components/Banner";
 import ClothSwiper from "@/components/ClothSwiper";
@@ -108,7 +108,7 @@ const swiperList = [
 const categoryList = [
   {
     id: 1,
-    name: "Clothing",
+    name: "Sweater",
     img: category1,
   },
   {
@@ -140,13 +140,13 @@ const clothList = new Array(10).fill(0).map((_, index) => ({
 const Home: React.FC<HomeProps> = () => {
   const navigate = useNavigate();
   const { appName, notificationsCount, emailsCount } = useAppStore();
-  const [sort, setSort] = useState("Sort By");
+  const [sort, setSort] = useState("Default");
   const [visible, setVisible] = useState(false);
   const [pickerValue, setPickerValue] = useState([]);
   const sortCol = [
     [
       {
-        value: "Sort By",
+        value: "Default",
         label: "Default",
       },
       {
@@ -156,10 +156,6 @@ const Home: React.FC<HomeProps> = () => {
       {
         value: "Newest",
         label: "Newest",
-      },
-      {
-        value: "Price: Low to High",
-        label: "Price: Low to High",
       },
     ],
   ];
@@ -209,7 +205,7 @@ const Home: React.FC<HomeProps> = () => {
               className="size-18 inline-block vertical-top ml-6"></ReactSVG>
           </>
         }
-        extra={<CountDown value="0:20:16"></CountDown>}></Title>
+        extra={<CountDown value="215999"></CountDown>}></Title>
 
       <ClothSwiper list={swiperList} />
 
@@ -223,7 +219,11 @@ const Home: React.FC<HomeProps> = () => {
           </div>
         }></Title>
 
-      <CategorySwiper list={categoryList} type={1} />
+      <CategorySwiper
+        list={categoryList}
+        type={1}
+        onItemClick={() => navigate("/clothing")}
+      />
 
       <Title
         value="Popular products"

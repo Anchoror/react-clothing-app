@@ -1,26 +1,62 @@
-import React, { useEffect } from "react";
-import { Swiper, Image } from "antd-mobile";
+import React, { useEffect, useState } from "react";
+import { Swiper, Image, Badge } from "antd-mobile";
 
 interface Props {
   list: Array<any>;
   type: 1 | 2;
+  showActived?: boolean;
+  onItemClick?: () => void;
 }
 
-const CategorySwiper: React.FC<Props> = ({ list }) => {
-  useEffect(() => {}, [list]);
+const CategorySwiper: React.FC<Props> = ({
+  list,
+  showActived = false,
+  onItemClick = () => {},
+}) => {
+  const [activedId, setActivedId] = useState(0);
+
+  useEffect(() => {
+    setActivedId(list[0].id);
+  }, [list]);
+
+  const onClick = (item) => {
+    setActivedId(item.id);
+    onItemClick();
+  };
 
   const items = list.map((item) => {
     return (
       <Swiper.Item key={item.id} className="px-8">
-        <div className="w-full">
-          <div className="px-9 pb-10 pt-2">
-            <Image
-              src={item.img}
-              fit="contain"
-              className="w-full aspect-ratio-1/1 rounded-50% bg-#F8FAFC p-8"></Image>
+        <div className="w-full" onClick={() => onClick(item)}>
+          <div className="px-9 py-4 relative">
+            <Badge
+              content={item.isNew ? "new" : ""}
+              bordered
+              style={{
+                "--right": "4px",
+                "--top": "6px",
+              }}>
+              <Image
+                src={item.img}
+                fit="contain"
+                className="w-full aspect-ratio-1/1 rounded-50% bg-#F8FAFC p-8"
+                style={{
+                  outline:
+                    showActived && item.id === activedId
+                      ? "1px solid var(--primary-color)"
+                      : "",
+                }}></Image>
+            </Badge>
           </div>
 
-          <div className="text-12 fw-500 lh-16 color-#0F172A text-center">
+          <div
+            className="text-12 fw-500 lh-16 color-#0F172A text-center"
+            style={{
+              color:
+                showActived && item.id === activedId
+                  ? "var(--primary-color)"
+                  : "",
+            }}>
             {item.name}
           </div>
         </div>

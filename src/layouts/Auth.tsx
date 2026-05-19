@@ -9,11 +9,11 @@ interface Props {
 const Auth: React.FC<Props> = ({ children }) => {
   const { token } = useAppStore();
 
-  console.log("tokne", token);
+  // console.log("tokne", token);
 
-  if (!token) {
-    return <Navigate to="/welcome" replace />;
-  }
+  // if (!token) {
+  //   return <Navigate to="/welcome" replace />;
+  // }
 
   return <>{children}</>;
 };

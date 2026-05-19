@@ -1,6 +1,9 @@
 import React, { useEffect } from "react";
 import { FloatingPanel, Image, Button, Swiper, ProgressBar } from "antd-mobile";
-import cloth3 from "@/assets/imgs/cloth3.png";
+import product1 from "@/assets/imgs/product/product_01.png";
+import product2 from "@/assets/imgs/product/product_02.png";
+import product3 from "@/assets/imgs/product/product_03.png";
+import product4 from "@/assets/imgs/product/product_04.png";
 import brand1 from "@/assets/imgs/brand1.png";
 import { useAppStore } from "@/stores";
 
@@ -9,24 +12,24 @@ interface Props {}
 const imgs = [
   {
     id: 1,
-    img: cloth3,
+    img: product1,
   },
   {
     id: 2,
-    img: cloth3,
+    img: product2,
   },
   {
     id: 3,
-    img: cloth3,
+    img: product3,
   },
   {
     id: 4,
-    img: cloth3,
+    img: product4,
   },
 ];
 
 const Detail: React.FC<Props> = () => {
-  const anchors = [100, 360, window.innerHeight * 0.8];
+  const anchors = [100, 380, window.innerHeight * 0.8];
   const [sizeValue, setSizeValue] = React.useState("XS");
   const { setPageTitle } = useAppStore();
 
@@ -37,7 +40,7 @@ const Detail: React.FC<Props> = () => {
   const images = imgs.map((item) => {
     return (
       <Swiper.Item key={item.id}>
-        <Image src={item.img} fit="contain" width="100%" height="100%" />
+        <Image src={item.img} fit="cover" width="100%" height="100%" />
       </Swiper.Item>
     );
   });

@@ -11,5 +11,5 @@ import App from "./App";
 createRoot(document.getElementById("root")!).render(
   <Router basename={import.meta.env.VITE_APP_PUBLIC_PATH}>
     <App />
-  </Router>
+  </Router>,
 );
