@@ -4,9 +4,10 @@ import { Image, Stepper } from "antd-mobile";
 interface Props {
   item: any;
   stepper?: boolean;
+  onChange?: (value: number) => void;
 }
 
-const ClothItem: React.FC<Props> = ({ item, stepper }) => {
+const ClothItem: React.FC<Props> = ({ item, stepper, onChange }) => {
   return (
     <div className=" flex gap-20 w-full!">
       <Image
@@ -27,7 +28,7 @@ const ClothItem: React.FC<Props> = ({ item, stepper }) => {
           {stepper && (
             <Stepper
               min={1}
-              defaultValue={1}
+              defaultValue={item.count}
               className="anchor-stepper"
               style={{
                 "--input-font-size": "12px",
@@ -35,6 +36,7 @@ const ClothItem: React.FC<Props> = ({ item, stepper }) => {
                 "--border-radius": "4px",
                 "--input-background-color": "transparent",
               }}
+              onChange={onChange}
             />
           )}
         </div>

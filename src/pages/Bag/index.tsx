@@ -5,116 +5,119 @@ import empty from "@/assets/svgs/empty.svg";
 import { HeartOutline, DeleteOutline } from "antd-mobile-icons";
 import { useNavigate } from "react-router-dom";
 import { Button } from "antd-mobile";
-import cloth2 from "@/assets/imgs/cloth2.png";
 import { Checkbox, SwipeAction } from "antd-mobile";
 import ClothItem from "@/components/ClothItem";
+import { useBagStore } from "@/stores";
 
 interface Props {}
 
-const list = [
-  {
-    id: 1,
-    img: cloth2,
-    title: "Elbow Patch Blazer",
-    size: "M",
-    color: "pink",
-    cost: "149.00",
-    count: 1,
-    brand: "Nike",
-  },
-  {
-    id: 2,
-    img: cloth2,
-    title: "Elbow Patch Blazer",
-    size: "M",
-    color: "pink",
-    cost: "149.00",
-    count: 1,
-    brand: "Nike",
-  },
-  {
-    id: 3,
-    img: cloth2,
-    title: "Elbow Patch Blazer",
-    size: "M",
-    color: "pink",
-    cost: "149.00",
-    count: 1,
-    brand: "ZARA",
-  },
-  {
-    id: 4,
-    img: cloth2,
-    title: "Elbow Patch Blazer",
-    size: "M",
-    color: "pink",
-    cost: "149.00",
-    count: 1,
-    brand: "ZARA",
-  },
-  {
-    id: 5,
-    img: cloth2,
-    title: "Elbow Patch Blazer",
-    size: "M",
-    color: "pink",
-    cost: "149.00",
-    count: 1,
-    brand: "ZARA",
-  },
-  {
-    id: 6,
-    img: cloth2,
-    title: "Elbow Patch Blazer",
-    size: "M",
-    color: "pink",
-    cost: "149.00",
-    count: 1,
-    brand: "ZARA",
-  },
-];
-
 const Bag: React.FC<Props> = () => {
   const [emptyShow, setEmptyShow] = React.useState(true);
+  const [checksValue, setChecksValue] = React.useState<string[][]>([]);
   const navigate = useNavigate();
 
+  const clothes = useBagStore((state) => state.clothes);
+  const changeCount = useBagStore((state) => state.changeCount);
+  const delCloth = useBagStore((state) => state.delCloth);
+  const totalCost = useBagStore((state) => {
+    let totalCost = 0;
+    const clothes = state.clothes;
+    clothes.forEach((brand) => {
+      brand.goods.forEach((cloth) => {
+        return (totalCost += cloth.count * parseFloat(cloth.cost) * 100);
+      });
+    });
+    return (totalCost / 100).toFixed(2).toString();
+  });
+
+  // 删除单件商品
+  const onDelCloth = (bid: number, cid: number) => {
+    delCloth(bid, cid);
+
+    setChecksValue(
+      checksValue.map((item, index) =>
+        index === clothes.findIndex((brand) => brand.bid === bid)
+          ? item.filter((value) => value !== cid.toString())
+          : item,
+      ),
+    );
+  };
+
   useEffect(() => {
-    setEmptyShow(false);
+    setChecksValue(clothes.map(() => []));
   }, []);
+
+  useEffect(() => {
+    setEmptyShow(clothes.length === 0);
+  }, [clothes]);
   const toWishlist = () => {
     navigate("/wishlist");
   };
 
-  const clothList = Object.entries(Object.groupBy(list, ({ brand }) => brand));
-
-  const checks = clothList.map(([key, value]) => {
+  const checksList = clothes.map((brand, index) => {
     return (
-      <div key={key} className="my-36">
+      <div key={brand.bid} className="my-36">
         <Checkbox
           block
           className="mb-14 px-24 text-16 fw-700 lh-22"
-          style={{ "--icon-size": "18px" }}>
-          {key}
+          style={{ "--icon-size": "18px" }}
+          checked={
+            checksValue[index] &&
+            checksValue[index].length === brand.goods.length &&
+            checksValue[index].every((value) =>
+              brand.goods.some((cloth) => cloth.cid.toString() === value),
+            )
+          }
+          onChange={(checked) => {
+            if (checked) {
+              setChecksValue(
+                checksValue.map((item, i) =>
+                  i === index
+                    ? brand.goods.map((cloth) => cloth.cid.toString())
+                    : item,
+                ),
+              );
+            } else {
+              setChecksValue(
+                checksValue.map((item, i) => (i === index ? [] : item)),
+              );
+            }
+          }}>
+          {brand.brandName}
         </Checkbox>
-        <Checkbox.Group>
-          {value.map((item) => {
+        <Checkbox.Group
+          value={checksValue[index]}
+          onChange={(v) => {
+            const newChecks = [...checksValue];
+            newChecks[index] = v as string[];
+            setChecksValue(newChecks);
+          }}>
+          {brand.goods.map((cloth) => {
             return (
               <SwipeAction
-                key={item.id}
+                key={cloth.cid}
                 rightActions={[
                   {
                     key: "delete",
                     text: <DeleteOutline fontSize={20} color={"#eb6383"} />,
                     color: "#FEF6F8FF",
+                    onClick: () => {
+                      onDelCloth(brand.bid, cloth.cid);
+                    },
                   },
                 ]}
                 className="mb-20 anchor-swiperaction">
                 <Checkbox
                   block
-                  value={item.id}
+                  value={cloth.cid.toString()}
                   className="anchor-checkbox px-24"
                   style={{ "--icon-size": "18px" }}>
-                  <ClothItem item={item} stepper></ClothItem>
+                  <ClothItem
+                    item={cloth}
+                    stepper
+                    onChange={(value: number) =>
+                      changeCount(brand.bid, cloth.cid, value)
+                    }></ClothItem>
                 </Checkbox>
               </SwipeAction>
             );
@@ -137,13 +140,36 @@ const Bag: React.FC<Props> = () => {
           btnText="Start Shopping"></EmptyPage>
       ) : (
         <div className="relative">
-          <div>{checks}</div>
+          <div>{checksList}</div>
           <div className="px-24 bottom-[--footer-h] left-0 right-0 bg-#fff py-16 sticky">
             <div className="mb-24 flex justify-between items-center">
-              <Checkbox block className="text-16 fw-700 lh-22">
+              <Checkbox
+                block
+                className="text-16 fw-700 lh-22"
+                checked={clothes.every(
+                  (brand, index) =>
+                    checksValue[index] &&
+                    checksValue[index].length === brand.goods.length &&
+                    checksValue[index].every((value) =>
+                      brand.goods.some(
+                        (cloth) => cloth.cid.toString() === value,
+                      ),
+                    ),
+                )}
+                onChange={(checked) => {
+                  if (checked) {
+                    setChecksValue(
+                      clothes.map((brand) =>
+                        brand.goods.map((cloth) => cloth.cid.toString()),
+                      ),
+                    );
+                  } else {
+                    setChecksValue(clothes.map(() => []));
+                  }
+                }}>
                 Choose all
               </Checkbox>
-              <div className="text-18 fw-700 lh-26">$51.08</div>
+              <div className="text-18 fw-700 lh-26">${totalCost}</div>
             </div>
 
             <Button

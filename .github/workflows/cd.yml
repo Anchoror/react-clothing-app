@@ -1,0 +1,56 @@
+name: CD - Deploy to Github Pages
+
+"on":
+  push:
+    branches: [main]
+
+# 给 GITHUB_TOKEN 赋予写入权限，才能部署 Pages
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# 同一时间只允许一个部署在进行，如果同时有多次 push ，取消旧的
+concurrency:
+  group: "deploy-pages"
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: 检出代码
+        uses: actions/checkout@v4
+
+      - name: 安装 pnpm
+        uses: pnpm/action-setup@v2
+
+      - name: 安装 Node.js 18
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+          cache: "pnpm"
+
+      - name: 安装依赖
+        run: pnpm install-frozen-lockfile
+
+      - name: 构建
+        run: pnpm build
+
+      - name: 上传构建产物
+        uses: actions/upload-artifact@v3
+        with:
+          name: dist/prod
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+
+    steps:
+      - name: 部署到 GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
