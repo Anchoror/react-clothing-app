@@ -1,6 +1,6 @@
-name: CD - Deploy to Github Pages
+name: CD - Deploy to GitHub Pages
 
-"on":
+on:
   push:
     branches: [main]
 
@@ -35,15 +35,15 @@ jobs:
           cache: "pnpm"
 
       - name: 安装依赖
-        run: pnpm install-frozen-lockfile
+        run: pnpm install --frozen-lockfile
 
       - name: 构建
         run: pnpm build
 
       - name: 上传构建产物
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-pages-artifact@v3
         with:
-          name: dist/prod
+          path: dist/prod
 
   deploy:
     needs: build

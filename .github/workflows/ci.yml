@@ -28,7 +28,7 @@ jobs:
           cache: "pnpm"
 
       - name: 安装依赖
-        run: pnpm install-frozen-lockfile
+        run: pnpm install --frozen-lockfile
 
       - name: 代码检查 (Lint)
         run: pnpm lint
