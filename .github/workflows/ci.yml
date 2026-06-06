@@ -18,6 +18,8 @@ jobs:
 
       - name: 安装 pnpm
         uses: pnpm/action-setup@v2
+        with:
+          version: 10.26.2
 
       - name: 安装 Node.js 18
         uses: actions/setup-node@v4
