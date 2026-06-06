@@ -18,9 +18,7 @@ import cloth4 from "@/assets/imgs/cloth4.png";
 import cloth5 from "@/assets/imgs/cloth5.png";
 import cloth6 from "@/assets/imgs/cloth6.png";
 
-interface Props {}
-
-const Searching: React.FC<Props> = ({}) => {
+const Searching: React.FC = () => {
   const [form] = Form.useForm();
   const [focus, setFocus] = useState(false);
   const navigate = useNavigate();

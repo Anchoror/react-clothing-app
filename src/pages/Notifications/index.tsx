@@ -4,8 +4,6 @@ import notify from "@/assets/svgs/notify.svg";
 import { List } from "antd-mobile";
 import { useAppStore } from "@/stores";
 
-interface Props {}
-
 interface NoticeItem {
   id: string;
   title: string;
@@ -30,7 +28,7 @@ const data = [
   },
 ];
 
-const Notifications: React.FC<Props> = () => {
+const Notifications: React.FC = () => {
   const { setPageTitle } = useAppStore();
   const [notices, setNotices] = useState<NoticeItem[]>();
 

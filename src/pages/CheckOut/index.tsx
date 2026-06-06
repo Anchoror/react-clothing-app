@@ -9,8 +9,6 @@ import checked from "@/assets/svgs/checked.svg";
 import cloth2 from "@/assets/imgs/cloth2.png";
 import { useAppStore } from "@/stores";
 
-interface Props {}
-
 const data = {
   id: 1,
   img: cloth2,
@@ -22,8 +20,8 @@ const data = {
   brand: "Nike",
 };
 
-const CheckOut: React.FC<Props> = () => {
-  const { id } = useParams();
+const CheckOut: React.FC = () => {
+  const { id } = useParams(); void id;
   const navigate = useNavigate();
   const { setPageTitle } = useAppStore();
 

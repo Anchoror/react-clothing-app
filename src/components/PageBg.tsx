@@ -6,7 +6,6 @@ import longCurve from "@/assets/svgs/longCurve.svg";
 import { ReactSVG } from "react-svg";
 import { useRef, useEffect } from "react";
 import { CSSTransition, TransitionGroup } from "react-transition-group";
-import { useAppStore } from "@/stores";
 
 interface Props {
   index: number;

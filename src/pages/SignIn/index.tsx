@@ -16,9 +16,7 @@ import { useAppStore } from "@/stores";
 
 import "./index.less";
 
-interface Props {}
-
-const SignIn: React.FC<Props> = () => {
+const SignIn: React.FC = () => {
   const [form] = Form.useForm();
   const [showPsd, setShowPsd] = React.useState(false);
   const [emailValid, setEmailValid] = React.useState(false);

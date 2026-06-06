@@ -9,9 +9,7 @@ import { Checkbox, SwipeAction } from "antd-mobile";
 import ClothItem from "@/components/ClothItem";
 import { useBagStore } from "@/stores";
 
-interface Props {}
-
-const Bag: React.FC<Props> = () => {
+const Bag: React.FC = () => {
   const [emptyShow, setEmptyShow] = React.useState(true);
   const [checksValue, setChecksValue] = React.useState<string[][]>([]);
   const navigate = useNavigate();

@@ -4,9 +4,7 @@ import profile from "@/assets/imgs/profile.png";
 import { CameraOutline } from "antd-mobile-icons";
 import { useAppStore } from "@/stores";
 
-interface Props {}
-
-const MyAccount: React.FC<Props> = () => {
+const MyAccount: React.FC = () => {
   const { setPageTitle } = useAppStore();
 
   useEffect(() => {

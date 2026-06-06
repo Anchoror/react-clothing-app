@@ -3,9 +3,7 @@ import PaySuccessSvg from "@/assets/svgs/paySuccess.svg";
 import EmptyPage from "@/layouts/EmptyPage";
 import { useAppStore } from "@/stores";
 
-interface Props {}
-
-const PaySuccess: React.FC<Props> = () => {
+const PaySuccess: React.FC = () => {
   const { setPageTitle } = useAppStore();
   useEffect(() => {
     console.log("PaySuccess");

@@ -5,8 +5,6 @@ import { useNavigate } from "react-router-dom";
 import { useAppStore } from "@/stores";
 import PageBg from "@/components/PageBg";
 
-interface Props {}
-
 const welcomeTexts = [
   {
     title: "Welcome to Dipstore.",
@@ -20,7 +18,7 @@ const welcomeTexts = [
   },
 ];
 
-const Dashboard: React.FC<Props> = () => {
+const Dashboard: React.FC = () => {
   const [index, setIndex] = useState(0);
   const navigate = useNavigate();
   const { token } = useAppStore();

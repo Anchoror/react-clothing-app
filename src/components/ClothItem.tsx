@@ -2,7 +2,7 @@ import React from "react";
 import { Image, Stepper } from "antd-mobile";
 
 interface Props {
-  item: any;
+  item: { img: string; title: string; size: string; cost: string; count: number };
   stepper?: boolean;
   onChange?: (value: number) => void;
 }

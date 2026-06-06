@@ -20,8 +20,6 @@ import brand5 from "@/assets/imgs/brand5.png";
 
 import { useNavigate } from "react-router-dom";
 
-interface Props {}
-
 const list = [
   {
     id: 1,
@@ -101,7 +99,7 @@ const swiperList = [
   },
 ];
 
-const Search: React.FC<Props> = () => {
+const Search: React.FC = () => {
   const navigate = useNavigate();
   const toSearch = () => {
     navigate("/searching");

@@ -8,8 +8,6 @@ import ClothItem from "@/components/ClothItem";
 import checked from "@/assets/svgs/checked.svg";
 import Title from "@/layouts/Title";
 
-interface Props {}
-
 const list = [
   {
     id: 1,
@@ -73,7 +71,7 @@ const list = [
   },
 ];
 
-const MyOrder: React.FC<Props> = () => {
+const MyOrder: React.FC = () => {
   return (
     <div>
       <SubHeader title="My Order" back>

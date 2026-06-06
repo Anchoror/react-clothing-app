@@ -24,9 +24,7 @@ import { ReactSVG } from "react-svg";
 import { useNavigate } from "react-router-dom";
 import PhoneInput from "@/components/PhoneInput";
 
-interface Props {}
-
-const SignUp: React.FC<Props> = () => {
+const SignUp: React.FC = () => {
   const [form] = Form.useForm();
   const [showPsd, setShowPsd] = React.useState(false);
   const [emailValid, setEmailValid] = React.useState(false);

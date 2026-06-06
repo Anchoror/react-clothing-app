@@ -11,8 +11,6 @@ import cloth3 from "@/assets/imgs/cloth3.png";
 import cloth4 from "@/assets/imgs/cloth4.png";
 import cloth5 from "@/assets/imgs/cloth5.png";
 
-interface Props {}
-
 const clothList = new Array(10).fill(0).map((_, index) => ({
   id: index,
   title: "Basic High Dpstr",
@@ -52,7 +50,7 @@ const clothList = new Array(10).fill(0).map((_, index) => ({
   stock: "10,000",
 }));
 
-const Shop: React.FC<Props> = () => {
+const Shop: React.FC = () => {
   const { id } = useParams();
   const { setPageTitle } = useAppStore();
   useEffect(() => {

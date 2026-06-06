@@ -5,9 +5,7 @@ import back from "../../assets/svgs/back.svg";
 import { ReactSVG } from "react-svg";
 import { useNavigate } from "react-router-dom";
 
-interface Props {}
-
-const AuthCode: React.FC<Props> = () => {
+const AuthCode: React.FC = () => {
   const [form] = Form.useForm();
   const navigate = useNavigate();
 

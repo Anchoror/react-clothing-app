@@ -4,13 +4,13 @@ import { HeartOutline, HeartFill } from "antd-mobile-icons";
 import { useNavigate } from "react-router-dom";
 
 interface Props {
-  data: any;
+  data: { title: string; img: string; cost: string; oldCost?: string; isLoved?: boolean };
   type: 1 | 2;
 }
 
 const ClothCard: React.FC<Props> = ({ data, type }) => {
   const [isLoved, setIsLoved] = useState(data.isLoved);
-  const onLoved = (e) => {
+  const onLoved = (e: React.MouseEvent<HTMLElement>) => {
     e.stopPropagation();
     setIsLoved(!isLoved);
   };

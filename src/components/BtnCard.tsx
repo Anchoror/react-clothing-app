@@ -2,9 +2,7 @@ import React from "react";
 import { Button, Image } from "antd-mobile";
 import cloth3 from "@/assets/imgs/cloth3.png";
 
-interface Props {}
-
-const BtnCard: React.FC<Props> = ({}) => {
+const BtnCard: React.FC = () => {
   return (
     <div className="bg-#FFF2E6 rounded-12 p-20 relative overflow-hidden m-24">
       <div className="color-sub-primary">

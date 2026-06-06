@@ -4,7 +4,7 @@ import { Swiper } from "antd-mobile";
 import ClothCard from "./ClothCard";
 
 interface Props {
-  list: Array<any>;
+  list: { id: number; img?: string; title?: string }[];
 }
 
 const SwiperBar: React.FC<Props> = ({ list }) => {

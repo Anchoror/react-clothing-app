@@ -4,9 +4,7 @@ import { Divider, Button } from "antd-mobile";
 import { useNavigate } from "react-router-dom";
 import { useAppStore } from "@/stores";
 
-interface Props {}
-
-const Payment: React.FC<Props> = () => {
+const Payment: React.FC = () => {
   const navigate = useNavigate();
   const { setPageTitle } = useAppStore();
   useEffect(() => {

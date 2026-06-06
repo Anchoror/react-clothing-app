@@ -7,8 +7,6 @@ import product4 from "@/assets/imgs/product/product_04.png";
 import brand1 from "@/assets/imgs/brand1.png";
 import { useAppStore } from "@/stores";
 
-interface Props {}
-
 const imgs = [
   {
     id: 1,
@@ -28,7 +26,7 @@ const imgs = [
   },
 ];
 
-const Detail: React.FC<Props> = () => {
+const Detail: React.FC = () => {
   const anchors = [100, 380, window.innerHeight * 0.8];
   const [sizeValue, setSizeValue] = React.useState("XS");
   const { setPageTitle } = useAppStore();

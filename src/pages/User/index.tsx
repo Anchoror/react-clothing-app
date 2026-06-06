@@ -22,8 +22,6 @@ import { useNavigate } from "react-router-dom";
 import { useAppStore } from "@/stores";
 import Title from "@/layouts/Title";
 
-interface Props {}
-
 const general = [
   {
     id: 1,
@@ -78,7 +76,7 @@ const other = [
   },
 ];
 
-const User: React.FC<Props> = ({}) => {
+const User: React.FC = () => {
   const navigate = useNavigate();
   const { notificationsCount, emailsCount } = useAppStore();
 

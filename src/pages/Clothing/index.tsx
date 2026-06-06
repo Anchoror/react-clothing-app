@@ -32,9 +32,7 @@ import category14 from "@/assets/imgs/category/category14.png";
 
 import bag from "@/assets/svgs/bag.svg";
 
-interface Props {}
-
-const Clothing: React.FC<Props> = () => {
+const Clothing: React.FC = () => {
   const navigate = useNavigate();
   const { notificationsCount } = useAppStore();
   const toSearch = () => {

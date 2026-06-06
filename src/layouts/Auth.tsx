@@ -1,5 +1,4 @@
 import React from "react";
-import { Navigate } from "react-router-dom";
 import { useAppStore } from "@/stores";
 
 interface Props {
@@ -7,7 +6,7 @@ interface Props {
 }
 
 const Auth: React.FC<Props> = ({ children }) => {
-  const { token } = useAppStore();
+  useAppStore();
 
   // console.log("tokne", token);
 

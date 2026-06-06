@@ -2,9 +2,7 @@ import React, { useRef, useEffect } from "react";
 // import { Button } from "antd-mobile";
 import { CameraOutline, LoopOutline, GiftOutline } from "antd-mobile-icons";
 
-interface Props {}
-
-const Camera: React.FC<Props> = () => {
+const Camera: React.FC = () => {
   const cameraVideoRef = useRef(null);
 
   // 启动摄像头

@@ -4,13 +4,13 @@ import { InfiniteScroll } from "antd-mobile";
 import { sleep } from "antd-mobile/es/utils/sleep";
 
 interface Props {
-  list: any[];
+  list: Record<string, unknown>[];
   staggered?: boolean;
 }
 
 const ClothList: React.FC<Props> = ({ list, staggered }) => {
   const [hasMore, setHasMore] = useState(true);
-  const [data, setData] = useState<any[]>(list);
+  const [data, setData] = useState<Record<string, unknown>[]>(list);
 
   const loadMore = async () => {
     await sleep(2000);

@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { Swiper, Image, Badge } from "antd-mobile";
 
 interface Props {
-  list: Array<any>;
+  list: { id: number; img: string; name: string; isNew?: boolean }[];
   type: 1 | 2;
   showActived?: boolean;
   onItemClick?: () => void;
@@ -19,7 +19,7 @@ const CategorySwiper: React.FC<Props> = ({
     setActivedId(list[0].id);
   }, [list]);
 
-  const onClick = (item) => {
+  const onClick = (item: { id: number; img: string; name: string; isNew?: boolean }) => {
     setActivedId(item.id);
     onItemClick();
   };

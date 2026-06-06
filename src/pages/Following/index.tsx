@@ -4,9 +4,7 @@ import brand1 from "@/assets/imgs/brand1.png";
 import { useNavigate } from "react-router-dom";
 import { useAppStore } from "@/stores";
 
-interface Props {}
-
-const Following: React.FC<Props> = () => {
+const Following: React.FC = () => {
   const navigate = useNavigate();
   const { setPageTitle } = useAppStore();
 

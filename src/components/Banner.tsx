@@ -1,10 +1,10 @@
 import React, { useRef, useState, useEffect } from "react";
-import { Swiper, Image } from "antd-mobile";
+import { Swiper } from "antd-mobile";
 // import woman3 from "@/assets/imgs/woman3.png";
 import adv from "@/assets/videos/01.mp4";
 
 interface Props {
-  list: any[];
+  list: { img?: string }[];
 }
 
 const Banner: React.FC<Props> = ({ list }) => {

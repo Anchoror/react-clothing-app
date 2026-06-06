@@ -8,9 +8,7 @@ import { useNavigate } from "react-router-dom";
 import PhoneInput from "@/components/PhoneInput";
 import "./index.less";
 
-interface Props {}
-
-const ResetPsd: React.FC<Props> = () => {
+const ResetPsd: React.FC = () => {
   const [form] = Form.useForm();
   //   const [showPsd, setShowPsd] = React.useState(false);
   const [emailValid, setEmailValid] = React.useState(false);

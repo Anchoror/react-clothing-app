@@ -32,9 +32,7 @@ import { MailOutline, BellOutline } from "antd-mobile-icons";
 import { useNavigate } from "react-router-dom";
 import { useAppStore } from "@/stores";
 
-interface HomeProps {
-  // Add your props here
-}
+// Add your props here
 
 const bannerList = [
   {
@@ -137,7 +135,7 @@ const clothList = new Array(10).fill(0).map((_, index) => ({
   isLoved: false,
 }));
 
-const Home: React.FC<HomeProps> = () => {
+const Home: React.FC = () => {
   const navigate = useNavigate();
   const { appName, notificationsCount, emailsCount } = useAppStore();
   const [sort, setSort] = useState("Default");
